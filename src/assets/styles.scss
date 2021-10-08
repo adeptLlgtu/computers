@@ -67,6 +67,7 @@ a{
     align-items: center;
     flex-direction: row;
     height: 100%;
+    overflow: hidden;
     img{
       height: 100%;
     }
@@ -93,6 +94,28 @@ a{
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
+    height: 100%;
+    &:hover{
+      .header-person__exit{
+        top: 0%;
+        transition: 0.5s;
+      }
+    }
+    &__exit{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      color: #292929;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: calc-px(18px);
+      cursor: pointer;
+      top: -120%;
+      transition: 0.5s;
+      border: 0;
+    }
     &__nick{
       font-family: Ubuntu;
       font-style: normal;

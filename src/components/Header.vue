@@ -3,7 +3,7 @@
     <div class="content">
       <img :src="logo" alt="">
       <div class="header-links">
-        <router-link to="/">Главная</router-link>
+        <router-link to="/main">Главная</router-link>
         <router-link to="/equipment">Оборудование</router-link>
         <router-link to="/order">Купить билет</router-link>
       </div>
@@ -12,6 +12,7 @@
         <div class="header-person__logo">
           <p>u</p>
         </div>
+        <button class="header-person__exit">Выход</button>
       </div>
     </div>
   </div>
