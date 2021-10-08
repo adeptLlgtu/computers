@@ -1,0 +1,39 @@
+<template>
+  <div v-if="headerFlag === true" class="header">
+    <div class="content">
+      <img :src="logo" alt="">
+      <div class="header-links">
+        <router-link to="/">Главная</router-link>
+        <router-link to="/equipment">Оборудование</router-link>
+        <router-link to="/order">Купить билет</router-link>
+      </div>
+      <div class="header-person">
+        <p class="header-person__nick">user</p>
+        <div class="header-person__logo">
+          <p>u</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import logo from "../assets/logo.svg";
+
+export default {
+  name: 'Header',
+  data(){
+    return{
+      logo,
+      headerFlag: true,
+    }
+  },
+  mounted() {
+
+    if(window.location.pathname === "/" || window.location.pathname === "/reg"){
+      this.headerFlag = false
+    }
+  }
+}
+</script>
+
