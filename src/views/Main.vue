@@ -22,13 +22,16 @@ import cyber from '../assets/cyber.png'
 
 
 export default {
-  name: "main",
+  name: "Main",
   components: {Banner},
   data(){
     return{
-      cyber
+      cyber,
+
     }
-  }
+  },
+
+
 
 }
 </script>

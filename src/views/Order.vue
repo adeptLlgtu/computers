@@ -1,14 +1,14 @@
 <template>
     <div class="order">
         <div class="content">
-            <form action="">
+            <form id="order-form" action="">
                 <label for="date">Выберите дату:</label>
-                <input id="date" type="date">
+                <input id="date" name="session_date" type="date">
                 <label for="time">Выберите время:</label>
-                <input id="time" type="time">
+                <input id="time" name="session_time" type="time">
                 <label for="how-time">Какое количество времени Вы хотите у нас провести? (ч)</label>
-                <input id="how-time" type="number">
-                <button>Забронировать</button>
+                <input id="how-time" name="session_count" type="number">
+                <button @click="tickets">Забронировать</button>
             </form>
         </div>
     </div>
@@ -16,7 +16,22 @@
 
 <script>
     export default {
-        name: "Order"
+        name: "Order",
+        methods:{
+            tickets(e){
+                    let form = document.querySelector('#order-form')
+                    form.onsubmit = async (e) => {
+                        e.preventDefault();
+                        let formData = new FormData(form)
+                        let response = await fetch('http://computers-api.loc:8080/api/tickets', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        window.location.pathname = '/main'
+                    }
+                }
+
+        }
     }
 </script>
 

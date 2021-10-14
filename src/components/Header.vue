@@ -29,11 +29,16 @@ export default {
       headerFlag: true,
     }
   },
-  mounted() {
+  created() {
+  },
+  methods:{
 
+  },
+  mounted() {
     if(window.location.pathname === "/" || window.location.pathname === "/reg"){
       this.headerFlag = false
     }
+    else{}
   }
 }
 </script>
